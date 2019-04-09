@@ -1,6 +1,20 @@
 package leetcode.easy;
 
-public class ReverseInteger {
+public class PalindromeNumber {
+  public boolean isPalindrome(int x) {
+
+    if (x < 0) {
+      return false;
+    }
+
+    int resInt = this.reverse(x);
+    if (resInt == x) {
+      return true;
+    }
+
+    return false;
+  }
+
   public int reverse(int x) {
     String strx = String.valueOf(x);
     if (x < 0) {
@@ -24,6 +38,5 @@ public class ReverseInteger {
       return 0;
     }
     return Integer.valueOf(String.valueOf(res));
-
   }
 }
