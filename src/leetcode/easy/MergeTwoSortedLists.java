@@ -2,39 +2,52 @@ package leetcode.easy;
 
 import leetcode.pojo.ListNode;
 
-public class MergeTwoSortedLists {
-  public ListNode mergeTwoLists(ListNode l1, ListNode l2){
-    for(int i = 0; i< l1.size(); i++){
-      for(int j = 0; j<l2.size();j++){
-        if(l1.get(i).val <= l2.get(j).val){
-          l1.insert(i, l2.get(j).val);
-        }
-      }
+class MergeTwoSortedLists {
+  public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    if (l1 == null && l2 == null) {
+      return null;
     }
-    
-    return l1;
+    if (l1 == null) {
+      return l2;
+    }
+    if (l2 == null) {
+      return l1;
+    }
+    ListNode result = new ListNode(0);
+    ListNode prev = result;
+    while (l1 != null && l2 != null) {
+      if (l1.val <= l2.val) {
+        prev.next = l1;
+        l1 = l1.next;
+      } else {
+        prev.next = l2;
+        l2 = l2.next;
+      }
+      prev = prev.next;
+    }
+    if (l1 != null) {
+      prev.next = l1;
+    }
+    if (l2 != null) {
+      prev.next = l2;
+    }
+    return result.next;
   }
-    
+  
   
   public static void main(String[] args) {
-    ListNode l1 = new ListNode();
-    l1.headInsert(1);
-//    l1.addLast(2);
-//    l1.addLast(4);
-    l1.insert(1, 2);
-    l1.insert(2, 4);
-    l1.print();
-    ListNode l2 = new ListNode();
-    l2.headInsert(1);
-    l2.addLast(3);
-    l2.addLast(4);
-    l2.print();
+    ListNode result = new ListNode(2);
+    result.next = new ListNode(3);
+    result.next.next = new ListNode(5);
     
-    MergeTwoSortedLists merge = new MergeTwoSortedLists();
-    ListNode mergerNode =  merge.mergeTwoLists(l1,l2);
-    mergerNode.print();
+    ListNode result1 = new ListNode(4);
+    result1.next = new ListNode(6);
+    result1.next.next = new ListNode(7);
     
-    
+    ListNode node = new MergeTwoSortedLists().mergeTwoLists(result,result1);
+    System.out.println(node);
   }
+  
+  
   
 }
