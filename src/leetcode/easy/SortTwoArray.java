@@ -9,24 +9,24 @@ public class SortTwoArray {
     int[] c = new int[a.length + b.length];
     int i = 0, j = 0, k = 0;
     while (i < a.length && j < b.length) {
-      if (a[i] > b[j]) {
-        c[k] = b[j];
+      if (a[i] > b[j]) { 
+        c[k] = b[j]; //取b中小的那个值给c[k]
         k++;
         j++;
       } else {
-        c[k] = a[i];
+        c[k] = a[i];//取a中小的那个值给c[k]
         k++;
         i++;
       }
     }
 
-    while (j < b.length) {
+    while (j < b.length) { // 如果b数组没有遍历完全
       c[k] = b[j];
       k++;
       j++;
     }
 
-    while (i < a.length) {
+    while (i < a.length) {// 如果a数组没有遍历完全
       c[k] = a[i];
       k++;
       i++;

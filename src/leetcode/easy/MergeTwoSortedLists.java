@@ -17,7 +17,7 @@ class MergeTwoSortedLists {
     ListNode prev = result;
     while (l1 != null && l2 != null) {
       if (l1.val <= l2.val) {
-        prev.next = l1;
+        prev.next = l1; //头节点的下一个元素 = 值小的节点
         l1 = l1.next;
       } else {
         prev.next = l2;
@@ -25,7 +25,7 @@ class MergeTwoSortedLists {
       }
       prev = prev.next;
     }
-    if (l1 != null) {
+    if (l1 != null) { // 如果最后l1不指向空，也就是还没有完全遍历完l1这个节点的所有元素
       prev.next = l1;
     }
     if (l2 != null) {
