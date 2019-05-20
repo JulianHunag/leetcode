@@ -1,7 +1,7 @@
 package leetcode.pojo;
 
 /**
- * Definition for singly-linked list.
+ * Definition for singly-linked collections.
  **/
 public class ListNode {
   public int val;
