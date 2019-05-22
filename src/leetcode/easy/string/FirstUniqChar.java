@@ -1,5 +1,8 @@
-package leetcode.easy;
+package leetcode.easy.string;
 
+/**
+ * 查找第一个不重复的字符
+ */
 public class FirstUniqChar {
 
     public static int firUniqChar(String s){
