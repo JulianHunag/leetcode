@@ -18,7 +18,7 @@ public class LinkedListCycle {
 
         ListNode fast = head.next;//快指针
 
-        while (null != slow && null != fast) {
+        while (null != slow && null != fast) {//如果不为空，一直遍历，如果为空则返回false
 
             if (slow == fast) { //如果相等，则有环
                 return true;
@@ -29,7 +29,7 @@ public class LinkedListCycle {
             fast = fast.next;//向下遍历
 
             if (null != fast)
-                fast = fast.next;
+                fast = fast.next;//再向下遍历，比slow多走一步
 
         }
 
