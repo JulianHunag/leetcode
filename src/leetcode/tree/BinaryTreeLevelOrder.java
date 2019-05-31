@@ -42,4 +42,29 @@ public class BinaryTreeLevelOrder {
         return res;
     }
 
+
+    public List<List<Integer>> levelOrder2(TreeNode root) {
+
+        if (null == root) return new ArrayList<>();
+        List<List<Integer>> res = new ArrayList<>();
+
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+
+        while (!q.isEmpty()) {
+            int levelSize = q.size();
+            List<Integer> currentLevel = new ArrayList<>();//当前层
+            for (int i = 0; i < levelSize; i++) {
+                TreeNode currNode = q.poll();
+                currentLevel.add(currNode.val);
+                if (null != currNode.left)
+                    q.add(currNode.left);
+                if (null != currNode.right)
+                    q.add(currNode.right);
+            }
+            res.add(currentLevel);//每层加入总的list中
+        }
+        return res;
+    }
+
 }
