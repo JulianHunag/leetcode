@@ -15,8 +15,8 @@ public class BinaryTreeLevelOrder {
 
     public List<List<Integer>> levelOrder(TreeNode root) {
 
-        if (null == root) return new ArrayList<>();
         List<List<Integer>> res = new ArrayList<>();
+        if (null == root) return res;
 
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
