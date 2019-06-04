@@ -4,8 +4,8 @@ import leetcode.pojo.ListNode;
 
 public class SwapPairsInLinkedList {
 
-    public ListNode swapPairs(ListNode head){
-    return null;
+    public ListNode swapPairs(ListNode head) {
+        return null;
     }
 
 
