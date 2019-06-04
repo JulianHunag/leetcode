@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class QuickSort {
 
     public static void quickSort(int[] arr) {
-         quickSort(arr, 0, arr.length - 1);
+        quickSort(arr, 0, arr.length - 1);
     }
 
     public static void quickSort(int[] arr, int low, int hight) {
@@ -37,19 +37,16 @@ public class QuickSort {
                 arr[j] = t;
                 i++;
                 j--;
-            }else if (i == j) {
+            } else if (i == j) {
                 i++;
             }
-
-
         }
-        quickSort(arr,low,i-1);
-        quickSort(arr,i+1,hight);
-
+        quickSort(arr, low, j);
+        quickSort(arr, i, hight);
     }
-    public static void main(String[] args) {
 
-        int a[] = { 49, 38, 65, 97, 76, 13, 27, 49 };
+    public static void main(String[] args) {
+        int a[] = {49, 38, 65, 97, 76, 13, 27, 49};
         quickSort(a);
         System.out.println(Arrays.toString(a));
     }
