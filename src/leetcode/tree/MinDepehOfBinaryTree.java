@@ -19,5 +19,4 @@ public class MinDepehOfBinaryTree {
         return  Math.min(left,right) + 1;
     }
 
-
 }
