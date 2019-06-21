@@ -49,23 +49,22 @@ public class SortArrayByParity {
     }
 
 
-    public int[] sortArrayByParity2(int[] A) {
+    public static int[] sortArrayByParity2(int[] A) {
         int[] res =  new int[A.length];
         int t = 0;
-        for (int i = 0; i < A.length; ++i)
+        int f = A.length-1;
+        for (int i = 0; i < A.length; ++i) {
             if (A[i] % 2 == 0)
-                res[t++] = A[i];
-
-        for (int i = 0; i < A.length; ++i)
+                 res[t++] = A[i];
             if (A[i] % 2 == 1)
-                res[t++] = A[i];
-
+                res[f--] = A[i];
+        }
         return res;
     }
 
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(SortArrayByParity.sortArrayByParity1(new int[]{3,1,2,4})));
+        System.out.println(Arrays.toString(SortArrayByParity.sortArrayByParity2(new int[]{3,1,2,4})));
     }
 
 }
