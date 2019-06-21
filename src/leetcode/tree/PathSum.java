@@ -6,7 +6,7 @@ import leetcode.pojo.TreeNode;
  * 112. Path Sum
  * https://leetcode.com/problems/path-sum/
  */
-public class PathSumOfTree {
+public class PathSum {
 
     public boolean hasPathSum(TreeNode root, int sum) {
 
