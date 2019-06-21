@@ -23,7 +23,7 @@ public class HappyNumber {
 
 
     public static void main(String[] args) {
-       boolean b =  HappyNumber.isHappy1(315465);
+       boolean b =  HappyNumber.isHappy(315465);
         System.out.println(b);
     }
 
